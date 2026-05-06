@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evergood Carwash & Polishing — Mobile Car Detailing in Bahrain</title>
-  <meta name="description" content="Bahrain's mobile car detailing service. We come to you. Book via WhatsApp in 60 seconds. From BD 7.">
+  <meta name="description" content="Bahrain's mobile car detailing service. We come to you. Book via WhatsApp in 60 seconds. From BD 10.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
@@ -1071,6 +1071,47 @@
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+    /* ── Focus-visible: all interactive elements ── */
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+    .btn-ghost:focus-visible {
+      outline-color: rgba(255,255,255,0.7);
+    }
+    .btn-on-light:focus-visible,
+    .btn-outline-light:focus-visible {
+      outline-color: var(--ink-light-1);
+    }
+    .nav-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+    .mobile-menu-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+    .fab:focus-visible {
+      outline: 3px solid #25D366;
+      outline-offset: 4px;
+    }
+    .pkg-card:focus-within {
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    /* ── Active / press states ── */
+    .btn-ghost:active { transform: translateY(0); background: rgba(255,255,255,0.14); }
+    .btn-on-light:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .btn-outline-light:active { transform: translateY(0); }
+    .pkg-card:active { transform: scale(0.99); }
+    .plan-card:active { transform: scale(0.99); }
+
+    /* ── Popular card hover keeps red tint ── */
+    .pkg-card.popular:hover { border-color: rgba(230,57,70,0.65); }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
       .fade-up { opacity: 1; transform: none; }
@@ -1174,7 +1215,7 @@
       </h1>
 
       <p class="hero-sub" data-comment-anchor="hero-sub">
-        Bahrain's mobile car detailing service. We pull up with everything we need, hand-wash to a finish you can see your reflection in, and leave you to your day. Book in 60 seconds via WhatsApp. From&nbsp;BD&nbsp;7.
+        Bahrain's mobile car detailing service. We pull up with everything we need, hand-wash to a finish you can see your reflection in, and leave you to your day. Book in 60 seconds via WhatsApp. From&nbsp;BD&nbsp;10.
       </p>
 
       <div class="hero-ctas">
@@ -1344,7 +1385,7 @@
     </div>
 
     <p class="compare-note fade-up">
-      Two one-time Deep Cleans cost <strong>BD 20+</strong>. The monthly program covers <strong>4× the service</strong> for BD 22.
+      Two one-time VIP Washes cost <strong>BD 20+</strong>. The monthly program covers <strong>4× the visits</strong> for BD 22 — and includes free scratch removal.
     </p>
   </div>
 </section>
@@ -1429,34 +1470,11 @@
 
     <div class="pkg-grid">
 
-      <!-- Quick Wash -->
-      <div class="pkg-card fade-up">
-        <h3>Quick Wash</h3>
-        <p class="pkg-meta">Weekly maintenance · 1 hour</p>
-        <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
-          <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
-            <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
-            <span class="price-display" data-s="7" data-m="8" data-l="9"
-                  style="font-family:var(--font-heading); font-weight:800; font-size:3.6rem; line-height:0.9; letter-spacing:-0.03em; color:#fff;">7</span>
-          </div>
-          <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
-        </div>
-        <ul class="pkg-features">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Body foam washing</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior vacuum &amp; wipe down</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Dashboard treatment</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Glass cleaning</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Tire shine</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Hand waxing</li>
-        </ul>
-        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Quick%20Wash" class="btn btn-ghost" style="width:100%; margin-top:auto;">Book Quick Wash</a>
-      </div>
-
-      <!-- Deep Clean — popular -->
+      <!-- VIP Wash — popular -->
       <div class="pkg-card popular fade-up">
-        <span class="pop-tag">Most Popular</span>
-        <h3>Deep Clean</h3>
-        <p class="pkg-meta">Interior + exterior refresh · 1–2 hrs</p>
+        <span class="pop-tag">Start Here</span>
+        <h3>VIP Wash</h3>
+        <p class="pkg-meta">Exterior + interior detail · 1–2 hrs</p>
         <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
           <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
             <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
@@ -1466,20 +1484,41 @@
           <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
         </div>
         <ul class="pkg-features">
-          <li class="feat-head">Everything in Quick Wash, plus:</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Ceramic spray shine</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Leather care</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Steam cleaning (vents, crevices)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Body safe washing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Ceramic boost spray</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Wheels deep clean</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Plastic &amp; rubber restoration</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Plastic &amp; leather care</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior detail &amp; steam clean</li>
         </ul>
-        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Deep%20Clean" class="btn btn-primary" style="width:100%; margin-top:auto;">Book Deep Clean</a>
+        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20VIP%20Wash" class="btn btn-primary" style="width:100%; margin-top:auto;">Book VIP Wash</a>
       </div>
 
-      <!-- Complete Detail -->
+      <!-- Deep Cleaning Package -->
       <div class="pkg-card fade-up">
-        <h3>Complete Detail</h3>
-        <p class="pkg-meta">Full transformation · 4 hours</p>
+        <h3>Deep Cleaning</h3>
+        <p class="pkg-meta">Interior detailing + stain removal</p>
+        <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
+          <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
+            <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
+            <span class="price-display" data-s="18" data-m="22" data-l="25"
+                  style="font-family:var(--font-heading); font-weight:800; font-size:3.6rem; line-height:0.9; letter-spacing:-0.03em; color:#fff;">18</span>
+          </div>
+          <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
+        </div>
+        <ul class="pkg-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Body full foam wash</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Carpet shampooing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Door &amp; cupholder polish</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>1-step hand wax</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Stain removal — seats, floor, roof</li>
+        </ul>
+        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Deep%20Cleaning%20Package" class="btn btn-ghost" style="width:100%; margin-top:auto;">Book Deep Cleaning</a>
+      </div>
+
+      <!-- Diamond Package -->
+      <div class="pkg-card fade-up">
+        <h3>Diamond Package</h3>
+        <p class="pkg-meta">Full detailing · inside &amp; out</p>
         <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
           <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
             <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
@@ -1489,14 +1528,13 @@
           <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
         </div>
         <ul class="pkg-features">
-          <li class="feat-head">Everything in Deep Clean, plus:</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Paint polishing (3-stage)</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior deep shampoo &amp; stain removal</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Engine bay cleaning</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Headlight restoration</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Scratch / spot removal</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Exterior full detailing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Carpet shampooing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>3-stage scratch removal</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Engine detailing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Stain removal — seats, floor, roof</li>
         </ul>
-        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Complete%20Detail" class="btn btn-ghost" style="width:100%; margin-top:auto;">Book Complete Detail</a>
+        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Diamond%20Package" class="btn btn-ghost" style="width:100%; margin-top:auto;">Book Diamond Package</a>
       </div>
 
     </div>
