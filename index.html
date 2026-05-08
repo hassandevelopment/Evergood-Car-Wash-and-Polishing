@@ -49,17 +49,22 @@
       --metal-2:     #243558;
     }
     [data-palette="charcoal"] {
-      --bg-deep:     #14171C;
-      --bg-section:  #191D24;
-      --bg-elev:     #20252E;
+      --bg-deep:     #0F0F0F;
+      --bg-section:  #141414;
+      --bg-elev:     #1A1A1A;
       --bg-light:    #F2EFE8;
       --bg-light-2:  #E5E0D5;
       --accent:      #E63946;
       --accent-hot:  #FF4D5B;
       --accent-deep: #B82531;
       --accent-glow: rgba(230,57,70,0.4);
-      --metal-1:     #232830;
-      --metal-2:     #2D333D;
+      --metal-1:     #1F1F1F;
+      --metal-2:     #272727;
+      --ink-light-1: #111111;
+      --ink-light-2: rgba(17,17,17,0.66);
+      --ink-light-3: rgba(17,17,17,0.42);
+      --hairline:    rgba(255,255,255,0.09);
+      --hairline-d:  rgba(0,0,0,0.09);
     }
     [data-palette="oxblood"] {
       --bg-deep:     #0E0B12;
@@ -97,7 +102,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Outfit', system-ui, sans-serif;
       background: var(--bg-deep);
       color: #fff;
       margin: 0;
@@ -243,7 +248,7 @@
     }
     .nav-row {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 28px; height: 76px; max-width: 1240px; margin: 0 auto;
+      padding: 0 28px; height: 100px; max-width: 1240px; margin: 0 auto;
     }
     .nav-logo {
       display: inline-flex; align-items: center; gap: 12px;
@@ -298,7 +303,7 @@
 
     .mobile-menu {
       display: none;
-      position: fixed; top: 76px; left: 0; right: 0; z-index: 49;
+      position: fixed; top: 100px; left: 0; right: 0; z-index: 49;
       background: rgba(11,18,32,0.98); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--hairline);
       padding: 20px 24px 28px;
@@ -326,8 +331,8 @@
       padding: 168px 28px 120px;
       overflow: hidden;
       background:
-        radial-gradient(1100px 600px at 70% 20%, rgba(230,57,70,0.18), transparent 60%),
-        radial-gradient(900px 700px at 10% 80%, rgba(36,53,88,0.55), transparent 60%),
+        radial-gradient(1100px 600px at 70% 20%, rgba(230,57,70,0.16), transparent 60%),
+        radial-gradient(900px 700px at 10% 80%, rgba(230,57,70,0.04), transparent 60%),
         linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-section) 100%);
     }
     /* Animated subtle road lines */
@@ -566,8 +571,8 @@
     .monthly {
       padding: 120px 28px;
       background:
-        radial-gradient(800px 500px at 20% 30%, rgba(230,57,70,0.08), transparent 60%),
-        radial-gradient(800px 500px at 90% 80%, rgba(36,53,88,0.6), transparent 60%),
+        radial-gradient(800px 500px at 20% 30%, rgba(230,57,70,0.09), transparent 60%),
+        radial-gradient(800px 500px at 90% 80%, rgba(230,57,70,0.04), transparent 60%),
         var(--bg-deep);
     }
     .monthly-includes {
@@ -821,8 +826,11 @@
     .size-key span { color: var(--accent); }
 
     .pkg-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+      display: grid; grid-template-columns: 0.92fr 1.12fr 0.92fr; gap: 20px; align-items: start;
     }
+    .pkg-card:nth-child(1) { animation-delay: 0ms; }
+    .pkg-card:nth-child(2) { animation-delay: 80ms; }
+    .pkg-card:nth-child(3) { animation-delay: 160ms; }
     @media (max-width: 980px) { .pkg-grid { grid-template-columns: 1fr; } }
 
     .pkg-card {
@@ -833,6 +841,10 @@
       position: relative;
       transition: transform .3s, box-shadow .3s, border-color .3s;
       overflow: hidden;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.07),
+        inset 0 -1px 0 rgba(0,0,0,0.15),
+        0 4px 16px rgba(0,0,0,0.25);
     }
     .pkg-card::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
@@ -1167,7 +1179,7 @@
 <nav id="main-nav">
   <div class="nav-row">
     <a href="#" class="nav-logo" data-comment-anchor="logo">
-      <img src="brand_assets/evergood-logo.PNG" alt="Evergood Carwash & Polishing" style="height:64px; width:auto; display:block;">
+      <img src="brand_assets/evergood-logo.PNG" alt="Evergood Carwash & Polishing" style="height:92px; width:auto; display:block;">
     </a>
 
     <div class="nav-links">
@@ -1470,29 +1482,6 @@
 
     <div class="pkg-grid">
 
-      <!-- VIP Wash — popular -->
-      <div class="pkg-card popular fade-up">
-        <span class="pop-tag">Start Here</span>
-        <h3>VIP Wash</h3>
-        <p class="pkg-meta">Exterior + interior detail · 1–2 hrs</p>
-        <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
-          <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
-            <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
-            <span class="price-display" data-s="10" data-m="11" data-l="12"
-                  style="font-family:var(--font-heading); font-weight:800; font-size:3.6rem; line-height:0.9; letter-spacing:-0.03em; color:#fff;">10</span>
-          </div>
-          <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
-        </div>
-        <ul class="pkg-features">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Body safe washing</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Ceramic boost spray</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Wheels deep clean</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Plastic &amp; leather care</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior detail &amp; steam clean</li>
-        </ul>
-        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20VIP%20Wash" class="btn btn-primary" style="width:100%; margin-top:auto;">Book VIP Wash</a>
-      </div>
-
       <!-- Deep Cleaning Package -->
       <div class="pkg-card fade-up">
         <h3>Deep Cleaning</h3>
@@ -1513,6 +1502,29 @@
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Stain removal — seats, floor, roof</li>
         </ul>
         <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Deep%20Cleaning%20Package" class="btn btn-ghost" style="width:100%; margin-top:auto;">Book Deep Cleaning</a>
+      </div>
+
+      <!-- VIP Wash — popular, center -->
+      <div class="pkg-card popular fade-up">
+        <span class="pop-tag">Start Here</span>
+        <h3>VIP Wash</h3>
+        <p class="pkg-meta">Exterior + interior detail · 1–2 hrs</p>
+        <div style="padding: 20px 0 24px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 24px;">
+          <div style="display:flex; align-items:baseline; gap:5px; margin-bottom:4px;">
+            <span style="color:var(--accent); font-size:0.95rem; font-weight:600; line-height:1;">BD</span>
+            <span class="price-display" data-s="10" data-m="11" data-l="12"
+                  style="font-family:var(--font-heading); font-weight:800; font-size:3.6rem; line-height:0.9; letter-spacing:-0.03em; color:#fff;">10</span>
+          </div>
+          <p style="color:var(--ink-3); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; margin:0;">per visit</p>
+        </div>
+        <ul class="pkg-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Body safe washing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Ceramic boost spray</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Wheels deep clean</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Plastic &amp; leather care</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Interior detail &amp; steam clean</li>
+        </ul>
+        <a href="https://wa.me/97339805245?text=Hi%2C%20I%27d%20like%20to%20book%20a%20VIP%20Wash" class="btn btn-primary" style="width:100%; margin-top:auto;">Book VIP Wash</a>
       </div>
 
       <!-- Diamond Package -->
